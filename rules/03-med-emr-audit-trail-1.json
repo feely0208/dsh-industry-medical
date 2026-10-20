@@ -1,0 +1,25 @@
+{
+  "id": "MED-EMR-AUDIT-TRAIL-1",
+  "title": "病历库表/实体缺少操作留痕字段（操作人、操作时间、版本）",
+  "severity": "high",
+  "source": "《电子病历应用管理规范（试行）》第十四条、第十六条 —— 应保存历次操作印痕，标记操作时间和操作人员，可查询可追溯",
+  "advice": "这份病历相关的 DDL/实体里只有业务字段，没有操作人、操作时间、版本号或 trace_id 之类留痕字段。规范要求保存历次操作印痕、可查询可追溯。请至少补上 updated_by / updated_at / version（或等价的审计字段），并在写入路径里保证每次修改都被记录；若留痕由框架（JPA Auditing、Envers、MyBatis-Plus 自动填充等）统一完成，请在实体上把对应注解/基类补全。",
+  "check": {
+    "type": "file-lacks",
+    "pattern": "(?:emr_record|medical_record|ehr_record|electronic_medical_record|病历|病案)[\\s\\S]{0,400}?(?:updated_by|updated_time|update_by|operator|操作人|操作时间|操作账号|version|revision|trace_id|created_by|modified_by)",
+    "flags": "is",
+    "paths": [
+      "**/*emr_record*",
+      "**/*EmrRecord*",
+      "**/*EMR_RECORD*",
+      "**/*EMRRecord*",
+      "**/*medical_record*",
+      "**/*MedicalRecord*",
+      "**/*medical-record*",
+      "**/*病历*.sql",
+      "**/*病历*.java"
+    ],
+    "evidence": "病历相关库表/实体里找不到操作人、操作时间、版本等留痕字段",
+    "when": "(?:病历|EMR|电子病历|病案|medical[ _-]?record)"
+  }
+}

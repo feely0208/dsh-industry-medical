@@ -1,0 +1,8 @@
+{
+  "name": "web-only-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "纯前端项目（不涉及医疗业务，用于验证 when 不适用时不误报）",
+  "scripts": { "dev": "vite", "build": "vite build" },
+  "dependencies": { "vue": "^3.4.0" }
+}

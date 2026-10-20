@@ -1,0 +1,17 @@
+{
+  "id": "MED-FACE-FALLBACK",
+  "title": "人脸识别登录未提供非人脸替代方式",
+  "severity": "medium",
+  "source": "《医疗卫生机构网络安全管理办法》第二十二条（六）—— 应同时提供非人脸识别方式，不得因不同意收集人脸数据而拒绝基本业务功能",
+  "advice": "项目里出现了人脸识别/活体检测，但全项目找不到账号密码、短信验证码、人工核验等非人脸方式。办法要求同时提供非人脸识别方式，不得因用户不同意收集人脸数据而拒绝基本业务功能。请补一条可用的替代登录/核验路径；如果人脸能力只用于员工考勤、门禁等内部场景，请在文档里写明用途边界，避免被当成面向患者的唯一认证方式。",
+  "check": {
+    "type": "files-lack",
+    "pattern": "(?:passwordLogin|password_login|pwdLogin|密码登录|账号密码|用户名密码|smsLogin|sms_login|短信登录|验证码登录|替代认证|非人脸|人工核验|人工审核|attendance|考勤|门禁|staff)",
+    "flags": "i",
+    "when": "face_|faceid|人脸识别|活体|liveness|arcsoft|face\\+\\+|com\\.baidu\\.aip\\.face",
+    "evidence": "项目里有面容识别能力，但找不到任何非人脸替代方式（密码/短信/人工核验）",
+    "paths": [
+      "**/*"
+    ]
+  }
+}

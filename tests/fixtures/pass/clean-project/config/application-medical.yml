@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/his
+    username: his_app
+emr:
+  outpatient:
+    retention-years: 15
+  inpatient:
+    retention-years: 30
+  audit-enabled: true
+prescription:
+  retention-days:
+    ordinary: 365
+    psychotropic: 730
+    narcotic: 1095

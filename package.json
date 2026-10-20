@@ -1,0 +1,19 @@
+{
+  "name": "@deepwhale-cn/dsh-industry-medical",
+  "version": "0.1.0",
+  "description": "医疗行业多出来的那几项，别等测评才发现",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["dsh", "dsh-plugin", "deepseek-harness", "plugin", "skill", "security", "guard", "industry-medical", "医疗", "医院", "病历", "电子病历", "处方", "合规", "等保", "医疗设备网络安全", "人类遗传资源"],
+  "files": ["lib", "skill", "bin", "rules", "docs", "cordis.patch.yml", "README.md"],
+  "main": "./lib/index.js",
+  "exports": { ".": "./lib/index.js", "./package.json": "./package.json" },
+  "bin": { "dsh-industry-medical": "./bin/cli.mjs" },
+  "engines": { "dsh": ">=0.1.0-rc.6 <0.3.0", "node": ">=18" },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "dependencies": { "@deepwhale-cn/dsh-guard-core": "^0.10.1" },
+  "peerDependencies": { "@deepseek-ai/dsh-skill": "*" },
+  "repository": { "type": "git", "url": "git+https://github.com/feely0208/dsh-industry-medical.git" },
+  "homepage": "https://www.deepwhale.org.cn/skills.html",
+  "bugs": { "url": "https://github.com/feely0208/dsh-industry-medical/issues" }
+}

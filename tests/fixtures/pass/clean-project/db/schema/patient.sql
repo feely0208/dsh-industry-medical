@@ -1,0 +1,7 @@
+CREATE TABLE patient (
+  id          BIGINT      NOT NULL AUTO_INCREMENT,
+  name        VARCHAR(64) NOT NULL,
+  gender      TINYINT     DEFAULT NULL,
+  created_at  DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='患者基本信息';

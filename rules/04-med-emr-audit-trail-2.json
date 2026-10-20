@@ -1,0 +1,17 @@
+{
+  "id": "MED-EMR-AUDIT-TRAIL-2",
+  "title": "全项目找不到独立的病历操作审计日志表或等效审计机制",
+  "severity": "high",
+  "source": "《电子病历应用管理规范（试行）》第十四条、第十六条 —— 应保存历次操作印痕，标记操作时间和操作人员，可查询可追溯",
+  "advice": "病历的每一次新增、修改、打印、调阅都应留下可追溯的印痕。项目里既没有审计日志表/模型（audit_log、oper_log、操作日志），也没看到框架级审计（Envers 的 _AUD 表、JPA Auditing、MyBatis-Plus 自动填充、独立审计服务）。如果审计确实由外部系统承担，请在仓库里留下说明并指明是哪个系统；否则请补一张独立操作日志表，记录操作时间、操作人、操作对象与操作类型。",
+  "check": {
+    "type": "files-lack",
+    "pattern": "(?:audit|操作日志|审计日志|oper_log|operation_log|_AUD\\b|Envers|JpaAuditing|@CreatedBy|@LastModifiedBy|MetaObjectHandler|trace_id)",
+    "flags": "i",
+    "when": "(?:病历|EMR|电子病历|病案|medical[ _-]?record)",
+    "evidence": "项目里有病历相关痕迹，但全项目找不到操作日志表/模型或框架级审计机制",
+    "paths": [
+      "**/*"
+    ]
+  }
+}

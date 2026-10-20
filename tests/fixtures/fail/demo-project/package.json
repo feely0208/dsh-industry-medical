@@ -1,0 +1,14 @@
+{
+  "name": "his-medical-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "医院信息系统演示项目（故意保留医疗行业常见缺项）",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7"
+  }
+}

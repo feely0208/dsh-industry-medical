@@ -1,0 +1,14 @@
+{
+  "name": "his-medical-clean",
+  "version": "0.1.0",
+  "private": true,
+  "description": "医院信息系统合规样本（用于反例验证）",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7"
+  }
+}

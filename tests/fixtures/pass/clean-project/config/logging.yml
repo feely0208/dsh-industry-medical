@@ -1,0 +1,4 @@
+logging:
+  level: info
+  retention-days: 30
+  max-size: 100MB
