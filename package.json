@@ -1,6 +1,6 @@
 {
   "name": "@deepwhale-cn/dsh-industry-medical",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "医疗行业多出来的那几项，别等测评才发现",
   "type": "module",
   "license": "MIT",
@@ -30,6 +30,7 @@
     "rules",
     "docs",
     "cordis.patch.yml",
+    "tests/fixtures",
     "README.md"
   ],
   "main": "./lib/index.js",
