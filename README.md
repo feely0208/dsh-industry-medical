@@ -1,5 +1,7 @@
 # @deepwhale-cn/dsh-industry-medical
 
+[![dshfind 收录](https://dshfind.com/api/badge/feely0208/dsh-industry-medical?lang=zh)](https://dshfind.com/zh/plugins/feely0208/dsh-industry-medical)
+
 [![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/zh/plugins/feely0208/dsh-industry-medical)
 
 **别等医疗行业测评时才发现：病历少存了 5 年、处方只留了 180 天、病历改过却查不到是谁改的、新建项目网络安全预算只给了 3%、人脸登录没有替代方式、基因样本项目拿不出伦理批件。**
